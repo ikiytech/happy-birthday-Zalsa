@@ -31,7 +31,7 @@
         }
         .cake {
             position: relative;
-            margin-top: 50px;
+            margin-top: 20px;
         }
         .candle {
             width: 10px;
@@ -60,10 +60,14 @@
             to { opacity: 0.7; transform: scale(1.2); }
         }
         button {
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            border: none;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -71,7 +75,17 @@
     <audio id="music" loop>
         <source src="selamat_ulangtahun.mp3" type="audio/mpeg">
     </audio>
+    
+    <div class="cake">
+        <div class="candle">
+            <div class="flame" id="flame"></div>
+        </div>
+        <img src="img.jpg" alt="Kue Ulang Tahun" width="200">
+    </div>
+    
     <button onclick="playMusic()">Putar Musik</button>
+    <button onclick="blowCandle()">Tiup Lilin</button>
+    
     <script>
         function playMusic() {
             let music = document.getElementById("music");
@@ -96,12 +110,5 @@
             document.querySelector('.candle').style.boxShadow = 'none';
         }
     </script>
-    <div class="cake">
-        <div class="candle">
-            <div class="flame" id="flame"></div>
-        </div>
-        <img src="img.jpg" alt="Kue Ulang Tahun" width="200">
-    </div>
-    <button onclick="blowCandle()">Tiup Lilin</button>
 </body>
 </html>
