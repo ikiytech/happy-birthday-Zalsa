@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise Ulang Tahun</title>
@@ -43,7 +42,7 @@
             top: -50px;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.8); /* Cahaya lilin */
+            box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.8);
         }
         .flame {
             width: 15px;
@@ -69,10 +68,18 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="music" loop>
         <source src="selamat_ulangtahun.mp3" type="audio/mpeg">
     </audio>
+    <button onclick="playMusic()">Putar Musik</button>
     <script>
+        function playMusic() {
+            let music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+            }
+        }
+        
         function createBalloon() {
             const balloon = document.createElement("div");
             balloon.className = "balloon";
@@ -86,7 +93,7 @@
         
         function blowCandle() {
             document.getElementById('flame').style.display = 'none';
-            document.querySelector('.candle').style.boxShadow = 'none'; // Hilangkan cahaya lilin
+            document.querySelector('.candle').style.boxShadow = 'none';
         }
     </script>
     <div class="cake">
